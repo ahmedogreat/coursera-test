@@ -8,6 +8,7 @@ LunchCheckController.$inject = ['$scope', '$filter'];
 function LunchCheckController($scope, $filter) {
   $scope.dishes = "";
   $scope.msg = "";
+  $scope.fontColor = "";
 
   $scope.checkLunch = function () {
     var itemCount=0;
@@ -21,8 +22,10 @@ function LunchCheckController($scope, $filter) {
 
     if(itemCount > 3){
       $scope.msg="Too much!";
+      $scope.fontColor="red";
     }else if(itemCount > 0){
       $scope.msg="Enjoy!";
+      $scope.fontColor="green";
     }
   };
 }
