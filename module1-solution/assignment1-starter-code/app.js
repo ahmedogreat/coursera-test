@@ -13,10 +13,11 @@ function LunchCheckController($scope, $filter) {
     var itemCount=0;
     var arrDishes=$scope.dishes.trim().split(',');
     for(var i=0; i<arrDishes.length; i++){
-      if(arrDishes[i]){
+      if(arrDishes[i].trim()){
         itemCount++;
       }
     }
+    console.log(itemCount);
 
     if(itemCount > 3){
       $scope.msg="Too much!";
